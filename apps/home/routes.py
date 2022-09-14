@@ -22,6 +22,11 @@ def about(subpath):
             return render_template('home/about_professor_jo-dong-young.html')
         elif parameter[1] == 'jang-hong-jun' :
             return render_template('home/about_professor_jang-hong-jun.html')
+    elif parameter[0] == 'lab' :
+        if parameter[1] == 'intelligent' :
+            return render_template('home/about-intelligent.html')
+        elif parameter[1] == 'algorithm' :
+            return render_template('home/about-algorithm.html')
 
     return str(parameter)
 
