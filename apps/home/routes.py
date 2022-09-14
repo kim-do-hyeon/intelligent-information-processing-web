@@ -9,6 +9,21 @@ from jinja2 import TemplateNotFound
 def index():
     return render_template('home/index.html', segment='index')
 
+@blueprint.route('/test')
+def test():
+    return render_template('home/about_professor_jo.html')
+
+@blueprint.route('/about/<path:subpath>')
+def about(subpath):
+    parameter = subpath.split("/")
+    print(parameter)
+    if parameter[0] == 'professor' :
+        if parameter[1] == 'jo-dong-young' :
+            return render_template('home/about_professor_jo-dong-young.html')
+        elif parameter[1] == 'jang-hong-jun' :
+            return render_template('home/about_professor_jang-hong-jun.html')
+
+    return str(parameter)
 
 @blueprint.route('/<template>')
 @login_required
