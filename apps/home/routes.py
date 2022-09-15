@@ -27,6 +27,11 @@ def about(subpath):
             return render_template('home/about-intelligent.html')
         elif parameter[1] == 'algorithm' :
             return render_template('home/about-algorithm.html')
+        elif parameter[1] == 'intelligent-students' :
+            return render_template('home/about-intelligent-students.html')
+        elif parameter[1] == 'algorithm-students' :
+            return render_template('home/about-algorithm-students.html')
+    
 
     return str(parameter)
 
