@@ -31,8 +31,15 @@ def about(subpath):
             return render_template('home/about-intelligent-students.html')
         elif parameter[1] == 'algorithm-students' :
             return render_template('home/about-algorithm-students.html')
-    
+    return str("Error" + parameter)
 
+@blueprint.route('/project/<path:subpath>')
+def project(subpath) :
+    parameter=  subpath.split("/")
+    print(parameter)
+    if parameter[0] == "intelligent" :
+        if parameter[1] == "intelligent-event-analysis" :
+            return render_template('home/project/1-intelligent-event-analysis.html')
     return str(parameter)
 
 @blueprint.route('/<template>')
