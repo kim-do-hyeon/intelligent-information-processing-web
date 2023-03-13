@@ -3,10 +3,6 @@
 import os
 import hashlib
 import binascii
-
-# Inspiration -> https://www.vitoshacademy.com/hashing-passwords-in-python/
-
-
 def hash_pass(password):
     """Hash a password for storing."""
 
@@ -15,7 +11,6 @@ def hash_pass(password):
                                   salt, 100000)
     pwdhash = binascii.hexlify(pwdhash)
     return (salt + pwdhash)  # return bytes
-
 
 def verify_pass(provided_password, stored_password):
     """Verify a stored password against one provided by user"""
