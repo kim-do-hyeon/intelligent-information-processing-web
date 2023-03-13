@@ -30,35 +30,12 @@
 
   <div class="container mt-8">
     <div class="row">
-      <h3>Manage Students</h3>
-      <div class="col-lg-3">
-        <h5>Add Students</h5>
-        <div class="mb-4 w-10 w-md-5 w-lg-25">
-          <form action="/manage_students" method="POST" enctype="multipart/form-data">
-            <p>Name <input type='text' name = 'username' /></p>
-            <p>Position <input type='text' name = 'position' /></p>
-            <p>Lab 
-              <select name = 'lab'>
-                <option value="IIP">IIP</option>
-                <option value="Algorithm">Algorithm</option>
-              </select>
-            </p>
-            <p>Description <input type="text" name='description' /></p>
-            <p> Select Image <input type="file" name="image" /></p>
-            <button type="submit">Submit</button>
-          </form>
-        </div>
-      </div>
-      <div class="col-lg-6">
-        <h5>List Students</h5>
+      <h3>Join User List</h3>
+        <h5>List Users</h5>
           <table class="table">
             <thead>
               <th>ID</th>
               <th>Name</th>
-              <th>Lab</th>
-              <th>Position</th>
-              <th>Description</th>
-              <th>Image</th>
               <th>Delete</th>
             </thead>
             <tbody>
@@ -66,16 +43,11 @@
               <tr>
                 <td>{{i.id}}</td>
                 <td>{{i.username}}</td>
-                <td>{{i.lab}}</td>
-                <td>{{i.position}}</td>
-                <td>{{i.description}}</td>
-                <td>{{i.image}}</td>
                 <td><a href="/delete_sutdents/{{i.id}}">Delete</a></td>
               </tr>
               {% endfor %}
             </tbody>
           </table>
-      </div>
     </div>
   </div>
 

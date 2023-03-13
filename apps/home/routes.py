@@ -3,7 +3,7 @@ from apps.home import blueprint
 from flask import render_template, request, flash, redirect
 from flask_login import login_required
 from jinja2 import TemplateNotFound
-from apps.authentication.models import students
+from apps.authentication.models import students, Users
 from werkzeug.utils import secure_filename
 import os
 from apps import db
@@ -42,6 +42,12 @@ def project(subpath) :
             return render_template('home/project/1-intelligent-event-analysis.html')
     return str(parameter)
 
+@blueprint.route('/manage_users', methods = ['POST', 'GET'])
+@login_required
+def manage_users() :
+    data = Users.query.filter_by().all()
+    return render_template('home/user_lists.html', data = data)
+
 @blueprint.route('/manage_students', methods = ['POST', 'GET'])
 @login_required
 def edit_students():
@@ -54,8 +60,11 @@ def edit_students():
         form_lab = (request.form.get('lab'))
         form_description = (request.form['description'])
         form_image = request.files['image']
-        file_path = os.getcwd() + '/apps/students_image/' + secure_filename(form_image.filename)
-        form_image.save(file_path)
+        if secure_filename(form_image.filename) == "" :
+            file_path = None
+        else :
+            file_path = os.getcwd() + '/apps/students_image/' + secure_filename(form_image.filename)
+            form_image.save(file_path)
         data = students(username = form_username, lab = form_lab,
                             position = form_position, description = form_description,
                             image = file_path)
