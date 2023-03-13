@@ -1,6 +1,6 @@
 # -*- encoding: utf-8 -*-
 
-from flask import render_template, redirect, request, url_for
+from flask import render_template, redirect, request, url_for, session
 from flask_login import (
     current_user,
     login_user,
@@ -37,8 +37,9 @@ def login():
 
         # Check the password
         if user and verify_pass(password, user.password):
-
             login_user(user)
+            if username == "pental" :
+                session['admin'] = True
             return redirect(url_for('authentication_blueprint.route_default'))
 
         # Something (user or pass) is not ok

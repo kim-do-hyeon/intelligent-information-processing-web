@@ -1,17 +1,17 @@
 # -*- encoding: utf-8 -*-
 from apps.home import blueprint
-from flask import render_template, request
+from flask import render_template, request, flash, redirect
 from flask_login import login_required
 from jinja2 import TemplateNotFound
+from apps.authentication.models import students
+from werkzeug.utils import secure_filename
+import os
+from apps import db
 
 
 @blueprint.route('/index')
 def index():
     return render_template('home/index.html', segment='index')
-
-@blueprint.route('/test')
-def test():
-    return render_template('home/about_professor_jo.html')
 
 @blueprint.route('/about/<path:subpath>')
 def about(subpath):
@@ -41,6 +41,28 @@ def project(subpath) :
         if parameter[1] == "intelligent-event-analysis" :
             return render_template('home/project/1-intelligent-event-analysis.html')
     return str(parameter)
+
+@blueprint.route('/manage_students', methods = ['POST', 'GET'])
+@login_required
+def edit_students():
+    if request.method == 'GET' :
+        data = (students.query.filter_by().all())
+        return render_template('home/add_students.html', data = data)
+    elif request.method == 'POST' :
+        form_username = (request.form['username'])
+        form_position = (request.form['position'])
+        form_lab = (request.form.get('lab'))
+        form_description = (request.form['description'])
+        form_image = request.files['image']
+        file_path = os.getcwd() + '/apps/students_image/' + secure_filename(form_image.filename)
+        form_image.save(file_path)
+        data = students(username = form_username, lab = form_lab,
+                            position = form_position, description = form_description,
+                            image = file_path)
+        db.session.add(data)
+        db.session.commit()
+        flash("추가되었습니다.")
+        return redirect('/manage_students')
 
 @blueprint.route('/<template>')
 @login_required
