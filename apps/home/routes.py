@@ -42,6 +42,32 @@ def project(subpath) :
             return render_template('home/project/1-intelligent-event-analysis.html')
     return str(parameter)
 
+@blueprint.route('/delete/<path:subpath>')
+def delete(subpath) :
+    parameter = subpath.split("/")
+    print(parameter)
+    if parameter[0] == "users" :
+        id = parameter[1]
+        user = Users.query.filter_by(id = id).first()
+        db.session.delete(user)
+        db.session.commit()
+        return redirect('/manage_users')
+    elif parameter[0] == "students" :
+        id = parameter[1]
+        user = students.query.filter_by(id = id).first()
+        db.session.delete(user)
+        db.session.commit()
+        return redirect('/manage_students')
+
+@blueprint.route('/update/<path:subpath>')
+def update(subpath) :
+    parameter = subpath.split("/")
+    if parameter[0] == "users" :
+        id = parameter[1]
+        user = Users.query.filter_by(id = id).update({'admin' : parameter[2]})
+        db.session.commit()
+        return redirect('/manage_users')
+
 @blueprint.route('/manage_users', methods = ['POST', 'GET'])
 @login_required
 def manage_users() :

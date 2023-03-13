@@ -36,6 +36,9 @@
             <thead>
               <th>ID</th>
               <th>Name</th>
+              <th>Admin</th>
+              <th>Update Admin</th>
+              <th>Down Admin</th>
               <th>Delete</th>
             </thead>
             <tbody>
@@ -43,7 +46,10 @@
               <tr>
                 <td>{{i.id}}</td>
                 <td>{{i.username}}</td>
-                <td><a href="/delete_sutdents/{{i.id}}">Delete</a></td>
+                <td>{{i.admin}}</td>
+                <td><a href="/update/users/{{i.id}}/1">Up(Admin)</a></td>
+                <td><a href="/update/users/{{i.id}}/0">Down(Admin)</a></td>
+                <td><a href="/delete/users/{{i.id}}">Delete</a></td>
               </tr>
               {% endfor %}
             </tbody>
