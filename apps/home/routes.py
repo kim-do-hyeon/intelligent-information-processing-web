@@ -28,9 +28,11 @@ def about(subpath):
         elif parameter[1] == 'algorithm' :
             return render_template('home/about-algorithm.html')
         elif parameter[1] == 'intelligent-students' :
-            return render_template('home/about-intelligent-students.html')
+            data = students.query.filter_by(lab = "IIP").all()
+            return render_template('home/about-intelligent-students.html', data = data)
         elif parameter[1] == 'algorithm-students' :
-            return render_template('home/about-algorithm-students.html')
+            data = students.query.filter_by(lab = "Algorithm").all()
+            return render_template('home/about-algorithm-students.html', data = data)
     return str("Error" + parameter)
 
 @blueprint.route('/project/<path:subpath>')
@@ -89,8 +91,9 @@ def edit_students():
         if secure_filename(form_image.filename) == "" :
             file_path = None
         else :
-            file_path = os.getcwd() + '/apps/students_image/' + secure_filename(form_image.filename)
+            file_path = os.getcwd() + '/apps/static/assets/member_image/' + secure_filename(form_image.filename)
             form_image.save(file_path)
+            file_path = secure_filename(form_image.filename)
         data = students(username = form_username, lab = form_lab,
                             position = form_position, description = form_description,
                             image = file_path)

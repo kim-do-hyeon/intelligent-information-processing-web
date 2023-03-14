@@ -34,186 +34,28 @@
       </div>
     </div>
     <div class="row">
+      {% for i in data %}
       <div class="col-lg-6 col-12">
         <div class="card card-profile mt-4">
           <div class="row">
             <div class="col-lg-4 col-md-6 col-12 mt-n5">
               <a href="javascript:;">
                 <div class="p-3 pe-md-0">
-                  <img class="w-100 border-radius-md shadow-lg" src="/static/assets/img/member/Algorithm-jung-hyeon.jpg" alt="image">
+                  <img class="w-100 border-radius-md shadow-lg" src="/static/assets/member_image/{{i.image}}" alt="image">
                 </div>
               </a>
             </div>
             <div class="col-lg-8 col-md-6 col-12 my-auto">
               <div class="card-body ps-lg-0">
-                <h5 class="mb-0">JungHyeon Lee</h5>
-                <h6 class="text-info">Boss</h6>
-                <p class="mb-0">iOS 앱개발이 대세라죠.</p>
+                <h5 class="mb-0">{{i.username}}</h5>
+                <h6 class="text-info">{{i.position}}</h6>
+                <p class="mb-0">{{i.description}}</p>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="col-lg-6 col-12">
-        <div class="card card-profile mt-lg-4 mt-5 z-index-2">
-          <div class="row">
-            <div class="col-lg-4 col-md-6 col-12 mt-n5">
-              <a href="javascript:;">
-                <div class="p-3 pe-md-0">
-                  <img class="w-100 border-radius-md shadow-lg" src="/static/assets/img/member/Algorithm-myoung-jun.jpg" alt="image">
-                </div>
-              </a>
-            </div>
-            <div class="col-lg-8 col-md-6 col-12 my-auto">
-              <div class="card-body ps-lg-0">
-                <h5 class="mb-0">MyoungJun Han</h5>
-                <h6 class="text-info">Researcher</h6>
-                <p class="mb-0">곱게 늙고 싶어요</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-6 col-12">
-        <div class="card card-profile mt-lg-4 mt-5 z-index-2">
-          <div class="row">
-            <div class="col-lg-4 col-md-6 col-12 mt-n5">
-              <a href="javascript:;">
-                <div class="p-3 pe-md-0">
-                  <img class="w-100 border-radius-md shadow-lg" src="/static/assets/img/member/Algorithm-seo-hyeon.jpg" alt="image">
-                </div>
-              </a>
-            </div>
-            <div class="col-lg-8 col-md-6 col-12 my-auto">
-              <div class="card-body ps-lg-0">
-                <h5 class="mb-0">SeoHyeon Park</h5>
-                <h6 class="text-info">Researcher</h6>
-                <p class="mb-0">열심히 살자</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-6 col-12">
-        <div class="card card-profile mt-lg-4 mt-5 z-index-2">
-          <div class="row">
-            <div class="col-lg-4 col-md-6 col-12 mt-n5">
-              <a href="javascript:;">
-                <div class="p-3 pe-md-0">
-                  <img class="w-100 border-radius-md shadow-lg" src="/static/assets/img/member/Algorithm-ho-bin.jpg" alt="image">
-                </div>
-              </a>
-            </div>
-            <div class="col-lg-8 col-md-6 col-12 my-auto">
-              <div class="card-body ps-lg-0">
-                <h5 class="mb-0">HoBin Bae</h5>
-                <h6 class="text-info">Researcher</h6>
-                <p class="mb-0">아자 아자 화이팅!</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-6 col-12">
-        <div class="card card-profile mt-4 z-index-2">
-          <div class="row">
-            <div class="col-lg-4 col-md-6 col-12 mt-n5">
-              <a href="javascript:;">
-                <div class="p-3 pe-md-0">
-                  <img class="w-100 border-radius-md shadow-lg" src="/static/assets/img/member/Algorithm-seo-jin.jpg" alt="image">
-                </div>
-              </a>
-            </div>
-            <div class="col-lg-8 col-md-6 col-12 my-auto">
-              <div class="card-body ps-lg-0">
-                <h5 class="mb-0">SeoJin Yeo</h5>
-                <h6 class="text-info">Researcher</h6>
-                <p class="mb-0">꼭 그렇게 가져가야지만 속이 후련했냐?</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-6 col-12">
-        <div class="card card-profile mt-lg-4 mt-5">
-          <div class="row">
-            <div class="col-lg-4 col-md-6 col-12 mt-n5">
-              <a href="javascript:;">
-                <div class="p-3 pe-md-0">
-                  <img class="w-100 border-radius-md shadow-lg" src="/static/assets/img/member/Algorithm-kyoung-bin.jpg" alt="image">
-                </div>
-              </a>
-            </div>
-            <div class="col-lg-8 col-md-6 col-12 my-auto">
-              <div class="card-body ps-lg-0">
-                <h5 class="mb-0">KyoungBin Kim</h5>
-                <h6 class="text-info">Researcher</h6>
-                <p class="mb-0">오? 쉽지 않은데?</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-6 col-12">
-        <div class="card card-profile mt-4 z-index-2">
-          <div class="row">
-            <div class="col-lg-4 col-md-6 col-12 mt-n5">
-              <a href="javascript:;">
-                <div class="p-3 pe-md-0">
-                  <img class="w-100 border-radius-md shadow-lg" src="/static/assets/img/member/Algorithm-ye-eun.jpg" alt="image">
-                </div>
-              </a>
-            </div>
-            <div class="col-lg-8 col-md-6 col-12 my-auto">
-              <div class="card-body ps-lg-0">
-                <h5 class="mb-0">Yeeun Lee</h5>
-                <h6 class="text-info">Researcher</h6>
-                <p class="mb-0">힘들때 하늘을 보면, 달라지는건 없다.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-6 col-12">
-        <div class="card card-profile mt-lg-4 mt-5 z-index-2">
-          <div class="row">
-            <div class="col-lg-4 col-md-6 col-12 mt-n5">
-              <a href="javascript:;">
-                <div class="p-3 pe-md-0">
-                  <img class="w-100 border-radius-md shadow-lg" src="/static/assets/img/member/Algorithm-jin-ho.jpg" alt="image">
-                </div>
-              </a>
-            </div>
-            <div class="col-lg-8 col-md-6 col-12 my-auto">
-              <div class="card-body ps-lg-0">
-                <h5 class="mb-0">JinHo Kim</h5>
-                <h6 class="text-info">Researcher</h6>
-                <p class="mb-0">운동이 진리다</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-6 col-12">
-        <div class="card card-profile mt-4 z-index-2">
-          <div class="row">
-            <div class="col-lg-4 col-md-6 col-12 mt-n5">
-              <a href="javascript:;">
-                <div class="p-3 pe-md-0">
-                  <img class="w-100 border-radius-md shadow-lg" src="/static/assets/img/member/Algorithm-gi-chan.jpg" alt="image">
-                </div>
-              </a>
-            </div>
-            <div class="col-lg-8 col-md-6 col-12 my-auto">
-              <div class="card-body ps-lg-0">
-                <h5 class="mb-0">GiChan Tak</h5>
-                <h6 class="text-info">Researcher</h6>
-                <p class="mb-0">인생 뭐 별거 있냐</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      {% endfor %}
     </div>
   </div>
 </section>
