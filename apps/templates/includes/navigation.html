@@ -111,84 +111,6 @@
                     </div>
                   </ul>
                 </li>
-
-                <!-- 20220920 세분화 과정 삭제 (두 연구실 통합)-->
-                <!-- Algorithm -->
-                <!-- <li class="nav-item dropdown dropdown-hover mx-2">
-                  <a class="nav-link ps-2 d-flex cursor-pointer align-items-center font-weight-bold" id="dropdownMenuPages" data-bs-toggle="dropdown" aria-expanded="false">
-                    <i class="material-icons opacity-6 me-2 text-md">dashboard</i>
-                    Algorithm
-                    <img src="/static/assets/img/down-arrow-dark.svg" alt="down-arrow" class="arrow ms-auto ms-md-2">
-                  </a>
-                  <div class="dropdown-menu dropdown-menu-animation ms-n3 dropdown-md p-3 border-radius-xl mt-0 mt-lg-3" aria-labelledby="dropdownMenuPages">
-                    <div class="d-none d-lg-block">
-                      <h6 class="dropdown-header text-dark font-weight-bolder d-flex align-items-center px-1 font-weight-bold">
-                        About Algorithm
-                      </h6>
-                      <a href="/about/lab/algorithm" class="dropdown-item border-radius-md">
-                        <span>About Lab</span>
-                      </a>
-                      <a href="/about/professor/jo-dong-young" class="dropdown-item border-radius-md">
-                        <span>About Professor</span>
-                      </a>
-                      <a href="/about/lab/algorithm-students" class="dropdown-item border-radius-md">
-                        <span>About Students</span>
-                      </a>
-                    </div>
-                    <div class="d-lg-none">
-                      <h6 class="dropdown-header text-dark font-weight-bolder d-flex align-items-center px-1">
-                        About Algorithm
-                      </h6>
-                      <a href="/about/lab/algorithm" class="dropdown-item border-radius-md">
-                        <span>About Lab</span>
-                      </a>
-                      <a href="/about/professor/jo-dong-young" class="dropdown-item border-radius-md">
-                        <span>About Professor</span>
-                      </a>
-                      <a href="/about/lab/algorithm-students" class="dropdown-item border-radius-md">
-                        <span>About Students</span>
-                      </a>
-                    </div>
-                  </div>
-                </li> -->
-                <!-- Intelligent Information Processing -->
-                <!-- <li class="nav-item dropdown dropdown-hover mx-2">
-                  <a class="nav-link ps-2 d-flex cursor-pointer align-items-center font-weight-bold" id="dropdownMenuPages" data-bs-toggle="dropdown" aria-expanded="false">
-                    <i class="material-icons opacity-6 me-2 text-md">devices</i>
-                    Intelligent Information Processing
-                    <img src="/static/assets/img/down-arrow-dark.svg" alt="down-arrow" class="arrow ms-auto ms-md-2">
-                  </a>
-                  <div class="dropdown-menu dropdown-menu-animation ms-n3 dropdown-md p-3 border-radius-xl mt-0 mt-lg-3" aria-labelledby="dropdownMenuPages">
-                    <div class="d-none d-lg-block">
-                      <h6 class="dropdown-header text-dark font-weight-bolder d-flex align-items-center px-1 font-weight-bold">
-                        About Intelligent Information
-                      </h6>
-                      <a href="/about/lab/intelligent" class="dropdown-item border-radius-md">
-                        <span>About Lab</span>
-                      </a>
-                      <a href="/about/professor/jang-hong-jun" class="dropdown-item border-radius-md">
-                        <span>About Professor</span>
-                      </a>
-                      <a href="/about/lab/intelligent-students" class="dropdown-item border-radius-md">
-                        <span>About Students</span>
-                      </a>
-                    </div>
-                    <div class="d-lg-none">
-                      <h6 class="dropdown-header text-dark font-weight-bolder d-flex align-items-center px-1 font-weight-bold">
-                        About Intelligent Information
-                      </h6>
-                      <a href="/about/lab/intelligent" class="dropdown-item border-radius-md">
-                        <span>About Lab</span>
-                      </a>
-                      <a href="/about/professor/jang-hong-jun" class="dropdown-item border-radius-md">
-                        <span>About Professor</span>
-                      </a>
-                      <a href="/about/lab/intelligent-students" class="dropdown-item border-radius-md">
-                        <span>About Students</span>
-                      </a>
-                    </div>
-                  </div>
-                </li> -->
                 <li class="nav-item dropdown dropdown-hover mx-2">
                   <a class="nav-link ps-2 d-flex cursor-pointer align-items-center font-weight-bold" id="dropdownMenuBlocks" data-bs-toggle="dropdown" aria-expanded="false">
                     <i class="material-icons opacity-6 me-2 text-md">view_day</i>
@@ -309,7 +231,33 @@
                     </div>
                   </ul>
                 </li>
-                
+
+                {% if current_user.is_authenticated and session['admin'] == True %}
+                <li class="nav-item dropdown dropdown-hover mx-2">
+                  <a class="nav-link ps-2 d-flex cursor-pointer align-items-center font-weight-bold" id="dropdownMenuDocs" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="material-icons opacity-6 me-2 text-md">article</i>
+                    Admin
+                    <img src="/static/assets/img/down-arrow-dark.svg" alt="down-arrow" class="arrow ms-auto ms-md-2">
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-animation dropdown-md dropdown-md-responsive mt-0 mt-lg-3 p-3 border-radius-lg" aria-labelledby="dropdownMenuDocs">
+                    <div class="d-none d-lg-block">
+                      <ul class="list-group">
+                        <li class="nav-item list-group-item border-0 p-0">
+                          <a class="dropdown-item py-2 ps-3 border-radius-md" href="/manage_students">
+                            <h6 class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0">Lab</h6>
+                            <span class="text-sm">Manage Lab Students</span>
+                          </a>
+                        </li>
+                        <li class="nav-item list-group-item border-0 p-0">
+                          <a class="dropdown-item py-2 ps-3 border-radius-md" href="/manage_users">
+                            <h6 class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0">Users</h6>
+                            <span class="text-sm">Manage User</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </ul>
+                {% endif %}
                 {% if current_user.is_authenticated %}
                 <li class="nav-item ms-lg-auto">
                   <a class="nav-link nav-link-icon me-2" 

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="apple-touch-icon" sizes="76x76" href="/static/assets/img/apple-icon.png">
+  <link rel="icon" type="image/png" href="/static/assets/img/favicon.png">
+
+  <title>
+    IIP - Admin Dash Board
+  </title>
+
+  <!--     Fonts and icons     -->
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
+  <!-- Nucleo Icons -->
+  <link href="/static/assets/css/nucleo-icons.css" rel="stylesheet" />
+  <link href="/static/assets/css/nucleo-svg.css" rel="stylesheet" />
+  <!-- Font Awesome Icons -->
+  <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+  <!-- Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+  <!-- CSS Files -->
+  <link id="pagestyle" href="/static/assets/css/material-kit.css?v=3.0.0" rel="stylesheet" />
+
+</head>
+<body class="forms-sections">
+
+  {% include 'includes/navigation.html' %}
+
+  <div class="container mt-8">
+    <div class="row">
+      <h3>Join User List</h3>
+        <h5>List Users</h5>
+          <table class="table">
+            <thead>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Admin</th>
+              <th>Update Admin</th>
+              <th>Down Admin</th>
+              <th>Delete</th>
+            </thead>
+            <tbody>
+              {% for i in data %}
+              <tr>
+                <td>{{i.id}}</td>
+                <td>{{i.username}}</td>
+                <td>{{i.admin}}</td>
+                <td><a href="/update/users/{{i.id}}/1">Up(Admin)</a></td>
+                <td><a href="/update/users/{{i.id}}/0">Down(Admin)</a></td>
+                <td><a href="/delete/users/{{i.id}}">Delete</a></td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+    </div>
+  </div>
+
+  {% include 'includes/footer-components.html' %} 
+
+  {% include 'includes/scripts.html' %} 
+
+</body>
+</html>

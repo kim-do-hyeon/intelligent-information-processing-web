@@ -41,146 +41,28 @@
       </div>
     </div>
     <div class="row">
+      {% for i in data %}
       <div class="col-lg-6 col-12">
         <div class="card card-profile mt-4">
           <div class="row">
             <div class="col-lg-4 col-md-6 col-12 mt-n5">
               <a href="javascript:;">
                 <div class="p-3 pe-md-0">
-                  <img class="w-100 border-radius-md shadow-lg" src="/static/assets/img/member/Intelligent_jun_hyuk.jpg" alt="image">
+                  <img class="w-100 border-radius-md shadow-lg" src="/static/assets/member_image/{{i.image}}" alt="image">
                 </div>
               </a>
             </div>
             <div class="col-lg-8 col-md-6 col-12 my-auto">
               <div class="card-body ps-lg-0">
-                <h5 class="mb-0">JunHyuk Ok</h5>
-                <h6 class="text-info">Boss</h6>
-                <p class="mb-0">노는게 제일 좋아.</p>
+                <h5 class="mb-0">{{i.username}}</h5>
+                <h6 class="text-info">{{i.position}}</h6>
+                <p class="mb-0">{{i.description}}</p>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="col-lg-6 col-12">
-        <div class="card card-profile mt-lg-4 mt-5">
-          <div class="row">
-            <div class="col-lg-4 col-md-6 col-12 mt-n5">
-              <a href="javascript:;">
-                <div class="p-3 pe-md-0">
-                  <img class="w-100 border-radius-md shadow-lg" src="/static/assets/img/member/Intelligent_do_hyeon.jpg" alt="image">
-                </div>
-              </a>
-            </div>
-            <div class="col-lg-8 col-md-6 col-12 my-auto">
-              <div class="card-body ps-lg-0">
-                <h5 class="mb-0">DoHyeon Kim</h5>
-                <h6 class="text-info">Developer</h6>
-                <p class="mb-0">아무것도 안하고 월 300만</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-6 col-12">
-        <div class="card card-profile mt-4 z-index-2">
-          <div class="row">
-            <div class="col-lg-4 col-md-6 col-12 mt-n5">
-              <a href="javascript:;">
-                <div class="p-3 pe-md-0">
-                  <img class="w-100 border-radius-md shadow-lg" src="/static/assets/img/member/Intelligent-eun-woo.jpg" alt="image">
-                </div>
-              </a>
-            </div>
-            <div class="col-lg-8 col-md-6 col-12 my-auto">
-              <div class="card-body ps-lg-0">
-                <h5 class="mb-0">EunWoo Lee</h5>
-                <h6 class="text-info">Researcher</h6>
-                <p class="mb-0">인생 열심히 살자</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-6 col-12">
-        <div class="card card-profile mt-4 z-index-2">
-          <div class="row">
-            <div class="col-lg-4 col-md-6 col-12 mt-n5">
-              <a href="javascript:;">
-                <div class="p-3 pe-md-0">
-                  <img class="w-100 border-radius-md shadow-lg" src="/static/assets/img/member/Intelligent-gi-sung.jpg" alt="image">
-                </div>
-              </a>
-            </div>
-            <div class="col-lg-8 col-md-6 col-12 my-auto">
-              <div class="card-body ps-lg-0">
-                <h5 class="mb-0">GiSung Lee</h5>
-                <h6 class="text-info">Researcher</h6>
-                <p class="mb-0">호의가 계속되면 둘리에요</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-6 col-12">
-        <div class="card card-profile mt-4 z-index-2">
-          <div class="row">
-            <div class="col-lg-4 col-md-6 col-12 mt-n5">
-              <a href="javascript:;">
-                <div class="p-3 pe-md-0">
-                  <img class="w-100 border-radius-md shadow-lg" src="/static/assets/img/member/Intelligent-da-eun.jpg" alt="image">
-                </div>
-              </a>
-            </div>
-            <div class="col-lg-8 col-md-6 col-12 my-auto">
-              <div class="card-body ps-lg-0">
-                <h5 class="mb-0">DaEun Ju</h5>
-                <h6 class="text-info">Researcher</h6>
-                <p class="mb-0">드루와</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-6 col-12">
-        <div class="card card-profile mt-4 z-index-2">
-          <div class="row">
-            <div class="col-lg-4 col-md-6 col-12 mt-n5">
-              <a href="javascript:;">
-                <div class="p-3 pe-md-0">
-                  <img class="w-100 border-radius-md shadow-lg" src="/static/assets/img/member/Intelligent-si-hyeon.jpg" alt="image">
-                </div>
-              </a>
-            </div>
-            <div class="col-lg-8 col-md-6 col-12 my-auto">
-              <div class="card-body ps-lg-0">
-                <h5 class="mb-0">SiHyeon Jo</h5>
-                <h6 class="text-info">Researcher</h6>
-                <p class="mb-0">열심히 살자</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-6 col-12">
-        <div class="card card-profile mt-4 z-index-2">
-          <div class="row">
-            <div class="col-lg-4 col-md-6 col-12 mt-n5">
-              <a href="javascript:;">
-                <div class="p-3 pe-md-0">
-                  <img class="w-100 border-radius-md shadow-lg" src="/static/assets/img/member/Intelligent-yong-hyeon.jpg" alt="image">
-                </div>
-              </a>
-            </div>
-            <div class="col-lg-8 col-md-6 col-12 my-auto">
-              <div class="card-body ps-lg-0">
-                <h5 class="mb-0">yongHyeon Park</h5>
-                <h6 class="text-info">Researcher</h6>
-                <p class="mb-0">우린 답을 찾을것이다, 늘 그랬던것 처럼</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      {% endfor %}
     </div>
   </div>
 </section>
