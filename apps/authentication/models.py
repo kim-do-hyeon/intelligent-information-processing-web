@@ -1,6 +1,8 @@
 # -*- encoding: utf-8 -*-
 from flask_login import UserMixin
-
+import datetime
+from sqlalchemy import Column, Integer, DateTime
+from sqlalchemy.ext.declarative import declarative_base
 from apps import db, login_manager
 
 from apps.authentication.util import hash_pass
@@ -29,6 +31,16 @@ class students(db.Model, UserMixin) :
     lab = db.Column(db.String(64))
     position = db.Column(db.String(64))
     description = db.Column(db.String(64))
+    image = db.Column(db.String(64))
+
+class project(db.Model, UserMixin) :
+    __tablename__ = 'project'
+    id = db.Column(db.Integer, primary_key = True)
+    username = db.Column(db.String(64))
+    created_date = Column(DateTime, default=datetime.datetime.utcnow)
+    title = db.Column(db.Text)
+    abstract = db.Column(db.Text)
+    content = db.Column(db.Text)
     image = db.Column(db.String(64))
 
 @login_manager.user_loader
